@@ -4,20 +4,29 @@ Just required and minimal features installed. Get on docker hub `ryts/jupyter`
 
 Main password is `secretpass`.
 
-You can edit after open terminal on jupyter and run this command.
-
-```shell
-jupyter notebook password
-```
-
 Get with build
 
 ```shell
-docker build -t ryts/jupyterlab:v1.0 -f jupyterlab/Dockerfile jupyterlab
+docker build -t ryts/jupyter:v1.0 -f jupyterlab/Dockerfile jupyterlab
 ```
 
 Run, don't forget to change base folder `~/jupyter`
 
 ```shell
-sudo docker run -d --restart always -v ~/jupyter:/jupyter -h jupyter ryts/jupyterlab:v1.0
+docker run -d --restart always -p 8888:8888 -v ~/jupyter:/jupyter -h jupyter ryts/jupyter:v1.0
+```
+
+## Change Password
+
+Open terminal on jupyter and run this command. After this command restart container.
+
+```shell
+# in jupyterlab terminal
+jupyter notebook password
+```
+
+Restart docker container
+
+```shell
+docker restart <ContainerID>
 ```
