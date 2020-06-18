@@ -1,6 +1,6 @@
 # JupyterLab Docker Image
 
-Just required and minimal features installed.
+Just required and minimal features installed. Get on docker hub `ryts/jupyter`
 
 Main password is `secretpass`.
 
