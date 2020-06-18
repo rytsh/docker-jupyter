@@ -13,11 +13,11 @@ jupyter notebook password
 Get with build
 
 ```shell
-docker build -t ryts/jupyterlab:1.0 -f jupyterlab/Dockerfile jupyterlab
+docker build -t ryts/jupyterlab:v1.0 -f jupyterlab/Dockerfile jupyterlab
 ```
 
 Run
 
 ```shell
-sudo docker run -d --restart always --network host --user $(id -u):$(id -g) -w /jupyter -v ~/jupyter:/jupyter ryts/jupyterlab:1.0
+sudo docker run -d --restart always --network host --user $(id -u):$(id -g) -w /jupyter -v ~/jupyter:/jupyter ryts/jupyterlab:v1.0
 ```
