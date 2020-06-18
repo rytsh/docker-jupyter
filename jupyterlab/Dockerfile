@@ -11,12 +11,8 @@ RUN apk add --no-cache \
 # clean image
 RUN apk del build-base
 
-RUN install -m 777 -d /.local /.jupyter /.cache
-
-ADD jupyter_notebook_config.json /.jupyter/jupyter_notebook_config.json
-
-RUN chmod 777 /.jupyter/jupyter_notebook_config.json
+ADD jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
 
 WORKDIR /jupyter
 
-CMD [ "jupyter", "lab" ]
+CMD [ "jupyter-lab", "--ip='0.0.0.0'" ]

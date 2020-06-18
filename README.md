@@ -16,8 +16,8 @@ Get with build
 docker build -t ryts/jupyterlab:v1.0 -f jupyterlab/Dockerfile jupyterlab
 ```
 
-Run
+Run, don't forget to change base folder `~/jupyter`
 
 ```shell
-sudo docker run -d --restart always --network host --user $(id -u):$(id -g) -w /jupyter -v ~/jupyter:/jupyter ryts/jupyterlab:v1.0
+sudo docker run -d --restart always -v ~/jupyter:/jupyter -h jupyter ryts/jupyterlab:v1.0
 ```
